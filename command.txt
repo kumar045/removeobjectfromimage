@@ -1,2 +1,5 @@
 docker build --tag course .
 docker run --name course  -p 5000:5000 course
+
+To delete docker container
+docker rm 95b8eb252c9a10ba856a1d2590ef0e28aca1f58b29f527e403975f9ae0440cd2
