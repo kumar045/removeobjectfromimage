@@ -1,0 +1,2 @@
+docker build --tag course .
+docker run --name course  -p 5000:5000 course
