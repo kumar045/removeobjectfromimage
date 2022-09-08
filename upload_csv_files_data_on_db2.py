@@ -37,7 +37,7 @@ except:
 # # Create the cb106 table
 create = 'CREATE TABLE cb106 (courseType VARCHAR(20000), description VARCHAR(20000), id VARCHAR(20000), slug VARCHAR(20000), instructorIds VARCHAR(20000), specializations VARCHAR(20000), partnerIds VARCHAR(20000), name VARCHAR(20000))'
 result = ibm_db.exec_immediate(conn, create)
-# Populate the animal table
+# Populate the cb106 table
 for csv_file in glob.glob("csv_files/*.csv"):
 
     data=pd.read_csv(csv_file)
