@@ -35,18 +35,13 @@ except:
 @app.route('/courses', methods = ['POST','GET'])  
 def course_details(): 
   user_data = request.get_json()  
-  print(user_data['name']) 
-  lis = list(user_data['name'].split(" "))
-
-  # length of list
-  length = len(lis)
-
-  # returning last element in list
-  arg=lis[length-1]
-#   arg=user_data['name']
+  list=['on','learn']
+  arg=''
+  for i in list: 
+    if i in user_data['name']:
+        arg=user_data['name'].split(i,1)[1]
   
-  
-
+  arg=arg.lstrip()
   if arg is not None: 
     arg = arg.lower() 
     command = "select * from test1 cb106 where LOWER(NAME) like '%{}%' ".format(arg,arg) 
