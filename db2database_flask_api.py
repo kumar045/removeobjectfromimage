@@ -41,7 +41,7 @@ def course_details():
     if i in user_data['name']:
         arg=user_data['name'].split(i,1)[1]
   
-  arg=arg.lstrip()
+  arg=arg.strip()
   if arg is not None: 
     arg = arg.lower() 
     command = "select * from test1 cb106 where LOWER(NAME) like '%{}%' ".format(arg,arg) 
