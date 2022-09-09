@@ -57,5 +57,5 @@ def course_details():
         coursename = dictionary['NAME']
         desc = dictionary['DESCRIPTION'] 
         ret_val = '{"Name":"%s","Description":"%s"}'%(coursename,desc)
-        return json.loads(ret_val)
+        return json.loads(ret_val,strict=False)
 app.run(host ='0.0.0.0', port = 5000, debug = True)
