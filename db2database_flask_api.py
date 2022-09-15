@@ -29,7 +29,7 @@ dsn = (
 try:
     conn = ibm_db.connect(dsn, "", "")
     print ("Connected to database: ", dsn_database, "as user: ", dsn_uid, "on host: ", dsn_hostname)
-    command = "select * from test1 where LOWER(NAME) like '%{}%' OR LOWER(DESCRIPTION) like '%{}%' ".format("arg","arg") 
+    command = "select * from cb106 where LOWER(NAME) like '%{}%' OR LOWER(DESCRIPTION) like '%{}%' ".format("arg","arg") 
 except:
     print ("Unable to connect: ", ibm_db.conn_errormsg() )
 @app.route('/courses', methods = ['POST','GET'])  
@@ -44,7 +44,7 @@ def course_details():
   arg=arg.strip()
   if arg is not None: 
     arg = arg.lower() 
-    command = "select * from test1 cb106 where LOWER(NAME) like '%{}%' ".format(arg,arg) 
+    command = "select * from cb106 where LOWER(NAME) like '%{}%' ".format(arg,arg) 
     print(command)
     stmt = ibm_db.exec_immediate(conn, command)
     dictionary = ibm_db.fetch_both(stmt)
